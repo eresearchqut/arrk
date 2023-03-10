@@ -1,0 +1,477 @@
+EXPORT_TIME: '2023-03-10 14:23:15.179390'
+EXPORT_TYPE: REGISTRY_PLUS_CDES
+RDRF_VERSION: 1.0.0
+REGISTRY_VERSION: ''
+cde_policies: []
+cdes:
+- abbreviated_name: test1
+  allow_multiple: false
+  calculation: ''
+  calculation_query: ''
+  code: test1
+  datatype: string
+  desc: ''
+  important: false
+  instructions: ''
+  is_required: false
+  max_length: null
+  max_value: null
+  min_value: null
+  name: Test 1
+  pattern: ''
+  pv_group: null
+  widget_name: ''
+  widget_settings: ''
+code: registryBlank
+complete_fields: []
+consent_configuration: null
+consent_rules: []
+consent_sections: []
+context_form_groups:
+- abbreviated_name: test1
+  code: test1
+  context_type: F
+  forms:
+  - pro1
+  - hcr1
+  is_default: true
+  name: Test 1
+  naming_cde_to_use: null
+  naming_scheme: D
+  ordering: C
+  sort_order: 1
+demographic_fields: []
+desc: Registry Blank
+email_notifications:
+- description: new-patient-user-added
+  disabled: false
+  email_from: no-reply@dev.registryframework.net
+  email_templates:
+  - body: |-
+      Welcome {{ patient.given_names }} {{ patient.family_name }},
+
+      Activate <a href="{{ activation_url }}">here</a>
+    description: New Patient
+    language: en
+    subject: Welcome
+  group_recipient: null
+  recipient: '{{patient.user.email}}'
+form_titles: null
+forms:
+- abbreviated_name: hcr1
+  applicability_condition: ''
+  conditional_rendering_rules: ''
+  display_name: Healthcare Reported Outcomes 1
+  header: ''
+  name: hcr1
+  position: 0
+  sections:
+  - abbreviated_name: test1
+    allow_multiple: false
+    code: test1
+    display_name: Test 1
+    elements:
+    - test1
+    extra: null
+    header: ''
+  tags: []
+- abbreviated_name: pro1
+  applicability_condition: ''
+  conditional_rendering_rules: ''
+  display_name: Patient Reported Outcomes 1
+  header: ''
+  name: pro1
+  position: 0
+  sections:
+  - abbreviated_name: test1
+    allow_multiple: false
+    code: test1
+    display_name: Test 1
+    elements:
+    - test1
+    extra: null
+    header: ''
+  tags: []
+forms_allowed_groups:
+  hcr1:
+  - Healthcare Professional
+  - Patients
+  - Researcher
+  - Specific Condition Admin
+  pro1:
+  - Healthcare Professional
+  - Patients
+  - Researcher
+  - Specific Condition Admin
+forms_readonly_groups:
+  hcr1:
+  - Patients
+  - Researcher
+  pro1:
+  - Researcher
+generic_sections: []
+group_permissions:
+- name: Working Group Curators
+  permissions: []
+- name: Specific Condition Admin
+  permissions:
+  - codename: add_customuser
+    content_type:
+    - groups
+    - customuser
+    name: Can add User
+  - codename: change_customuser
+    content_type:
+    - groups
+    - customuser
+    name: Can change User
+  - codename: delete_customuser
+    content_type:
+    - groups
+    - customuser
+    name: Can delete User
+  - codename: view_customuser
+    content_type:
+    - groups
+    - customuser
+    name: Can view User
+  - codename: add_archivedpatient
+    content_type:
+    - patients
+    - archivedpatient
+    name: Can add archived patient
+  - codename: change_archivedpatient
+    content_type:
+    - patients
+    - archivedpatient
+    name: Can change archived patient
+  - codename: delete_archivedpatient
+    content_type:
+    - patients
+    - archivedpatient
+    name: Can delete archived patient
+  - codename: view_archivedpatient
+    content_type:
+    - patients
+    - archivedpatient
+    name: Can view archived patient
+  - codename: add_patient
+    content_type:
+    - patients
+    - patient
+    name: Can add patient
+  - codename: can_see_code_field
+    content_type:
+    - patients
+    - patient
+    name: Can see Code Field column
+  - codename: can_see_data_modules
+    content_type:
+    - patients
+    - patient
+    name: Can see Data Modules column
+  - codename: can_see_diagnosis_currency
+    content_type:
+    - patients
+    - patient
+    name: Can see Diagnosis Currency column
+  - codename: can_see_diagnosis_progress
+    content_type:
+    - patients
+    - patient
+    name: Can see Diagnosis Progress column
+  - codename: can_see_dob
+    content_type:
+    - patients
+    - patient
+    name: Can see Date of Birth column
+  - codename: can_see_full_name
+    content_type:
+    - patients
+    - patient
+    name: Can see Full Name column
+  - codename: can_see_living_status
+    content_type:
+    - patients
+    - patient
+    name: Can see Living Status column
+  - codename: can_see_working_groups
+    content_type:
+    - patients
+    - patient
+    name: Can see Working Groups column
+  - codename: change_patient
+    content_type:
+    - patients
+    - patient
+    name: Can change patient
+  - codename: delete_patient
+    content_type:
+    - patients
+    - patient
+    name: Can delete patient
+  - codename: view_patient
+    content_type:
+    - patients
+    - patient
+    name: Can view patient
+  - codename: view_failedloginlog
+    content_type:
+    - useraudit
+    - failedloginlog
+    name: Can view failed login log
+  - codename: view_loginattempt
+    content_type:
+    - useraudit
+    - loginattempt
+    name: Can view login attempt
+  - codename: view_loginlog
+    content_type:
+    - useraudit
+    - loginlog
+    name: Can view login log
+  - codename: view_userdeactivation
+    content_type:
+    - useraudit
+    - userdeactivation
+    name: Can view user deactivation
+- name: Clinical Staff
+  permissions: []
+- name: Researcher
+  permissions:
+  - codename: can_see_code_field
+    content_type:
+    - patients
+    - patient
+    name: Can see Code Field column
+  - codename: can_see_data_modules
+    content_type:
+    - patients
+    - patient
+    name: Can see Data Modules column
+  - codename: can_see_diagnosis_currency
+    content_type:
+    - patients
+    - patient
+    name: Can see Diagnosis Currency column
+  - codename: can_see_diagnosis_progress
+    content_type:
+    - patients
+    - patient
+    name: Can see Diagnosis Progress column
+  - codename: can_see_dob
+    content_type:
+    - patients
+    - patient
+    name: Can see Date of Birth column
+  - codename: can_see_full_name
+    content_type:
+    - patients
+    - patient
+    name: Can see Full Name column
+  - codename: can_see_living_status
+    content_type:
+    - patients
+    - patient
+    name: Can see Living Status column
+  - codename: can_see_working_groups
+    content_type:
+    - patients
+    - patient
+    name: Can see Working Groups column
+  - codename: view_patient
+    content_type:
+    - patients
+    - patient
+    name: Can view patient
+- name: Healthcare Professional
+  permissions:
+  - codename: add_patient
+    content_type:
+    - patients
+    - patient
+    name: Can add patient
+  - codename: can_see_code_field
+    content_type:
+    - patients
+    - patient
+    name: Can see Code Field column
+  - codename: can_see_data_modules
+    content_type:
+    - patients
+    - patient
+    name: Can see Data Modules column
+  - codename: can_see_diagnosis_currency
+    content_type:
+    - patients
+    - patient
+    name: Can see Diagnosis Currency column
+  - codename: can_see_diagnosis_progress
+    content_type:
+    - patients
+    - patient
+    name: Can see Diagnosis Progress column
+  - codename: can_see_dob
+    content_type:
+    - patients
+    - patient
+    name: Can see Date of Birth column
+  - codename: can_see_full_name
+    content_type:
+    - patients
+    - patient
+    name: Can see Full Name column
+  - codename: can_see_living_status
+    content_type:
+    - patients
+    - patient
+    name: Can see Living Status column
+  - codename: can_see_working_groups
+    content_type:
+    - patients
+    - patient
+    name: Can see Working Groups column
+  - codename: change_patient
+    content_type:
+    - patients
+    - patient
+    name: Can change patient
+  - codename: delete_patient
+    content_type:
+    - patients
+    - patient
+    name: Can delete patient
+  - codename: view_patient
+    content_type:
+    - patients
+    - patient
+    name: Can view patient
+- name: Patients
+  permissions: []
+metadata_json: '{"features": ["contexts", "clinicians_need_ethical_clearance", "patients_create_users"]}'
+name: Registry Blank
+next_of_kin_relationships: []
+patient_data_section: {}
+patient_stage_rules: []
+patient_stages: []
+pvgs: []
+registry_dashboards: []
+reports:
+- access_groups:
+  - Clinical Staff
+  cde_heading_format: LABEL
+  cde_include_form_timestamp: false
+  clinical_data_fields:
+  - cde_key: test1____test1____test1
+    context_form_group: test1
+  demographic_fields:
+  - field: id
+    model: patient
+    sort_order: 0
+  - field: familyName
+    model: patient
+    sort_order: 1
+  - field: givenNames
+    model: patient
+    sort_order: 2
+  - field: maidenName
+    model: patient
+    sort_order: 3
+  - field: umrn
+    model: patient
+    sort_order: 4
+  - field: createdAt
+    model: patient
+    sort_order: 5
+  - field: lastUpdatedOverallAt
+    model: patient
+    sort_order: 6
+  - field: dateOfBirth
+    model: patient
+    sort_order: 7
+  - field: dateOfDeath
+    model: patient
+    sort_order: 8
+  - field: placeOfBirth
+    model: patient
+    sort_order: 9
+  - field: dateOfMigration
+    model: patient
+    sort_order: 10
+  - field: countryOfBirth
+    model: patient
+    sort_order: 11
+  - field: ethnicOrigin
+    model: patient
+    sort_order: 12
+  - field: sex
+    model: patient
+    sort_order: 13
+  - field: homePhone
+    model: patient
+    sort_order: 14
+  - field: mobilePhone
+    model: patient
+    sort_order: 15
+  - field: workPhone
+    model: patient
+    sort_order: 16
+  - field: email
+    model: patient
+    sort_order: 17
+  - field: nextOfKinFamilyName
+    model: patient
+    sort_order: 18
+  - field: nextOfKinGivenNames
+    model: patient
+    sort_order: 19
+  - field: nextOfKinRelationship { relationship }
+    model: patient
+    sort_order: 20
+  - field: nextOfKinAddress
+    model: patient
+    sort_order: 21
+  - field: nextOfKinSuburb
+    model: patient
+    sort_order: 22
+  - field: nextOfKinState
+    model: patient
+    sort_order: 23
+  - field: nextOfKinPostcode
+    model: patient
+    sort_order: 24
+  - field: nextOfKinHomePhone
+    model: patient
+    sort_order: 25
+  - field: nextOfKinMobilePhone
+    model: patient
+    sort_order: 26
+  - field: nextOfKinWorkPhone
+    model: patient
+    sort_order: 27
+  - field: nextOfKinEmail
+    model: patient
+    sort_order: 28
+  - field: nextOfKinParentPlaceOfBirth
+    model: patient
+    sort_order: 29
+  - field: nextOfKinCountry
+    model: patient
+    sort_order: 30
+  - field: inactiveReason
+    model: patient
+    sort_order: 31
+  - field: livingStatus
+    model: patient
+    sort_order: 32
+  - field: patientType
+    model: patient
+    sort_order: 33
+  description: ''
+  filter_consents: []
+  filter_working_groups: []
+  registry: registryBlank
+  title: Test 1
+splash_screen: ''
+working_groups:
+- Unallocated
