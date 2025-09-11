@@ -1,6 +1,5 @@
 from django.conf.urls import include
 from django.urls import re_path
-
 from rdrf.views.handler_views import (
     handler404,
     handler500,
